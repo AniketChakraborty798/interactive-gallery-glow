@@ -1,0 +1,27 @@
+import { motion } from "framer-motion";
+import { Github, Linkedin, Twitter } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-border/50 py-12 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <p className="text-muted-foreground text-sm">
+          © 2026 Portfolio. Built with passion.
+        </p>
+
+        <div className="flex items-center gap-4">
+          {[Github, Linkedin, Twitter].map((Icon, i) => (
+            <motion.a
+              key={i}
+              href="#"
+              whileHover={{ y: -3, scale: 1.1 }}
+              className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
+            >
+              <Icon size={18} />
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+}
