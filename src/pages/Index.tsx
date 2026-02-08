@@ -6,11 +6,13 @@ import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FlyingBirds from "@/components/FlyingBirds";
+import MusicToggle from "@/components/MusicToggle";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <FlyingBirds />
+      <MusicToggle />
       <Navbar />
       <HeroSection />
       <AboutSection />
