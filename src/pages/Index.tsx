@@ -5,10 +5,12 @@ import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FlyingBirds from "@/components/FlyingBirds";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <FlyingBirds />
       <Navbar />
       <HeroSection />
       <AboutSection />
