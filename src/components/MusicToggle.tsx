@@ -1,125 +1,54 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
-
-function createAmbientMusic(audioCtx: AudioContext) {
-  const masterGain = audioCtx.createGain();
-  masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
-  masterGain.connect(audioCtx.destination);
-
-  const noteFreqs = [174.61, 220, 261.63, 329.63, 392];
-  const allNodes: (OscillatorNode | AudioBufferSourceNode)[] = [];
-
-  // Ambient pad oscillators
-  noteFreqs.forEach((freq, i) => {
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    const filter = audioCtx.createBiquadFilter();
-
-    osc.type = "sine";
-    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-    osc.detune.setValueAtTime((i - 2) * 5, audioCtx.currentTime);
-
-    // Slow LFO for gentle movement
-    const lfo = audioCtx.createOscillator();
-    const lfoGain = audioCtx.createGain();
-    lfo.type = "sine";
-    lfo.frequency.setValueAtTime(0.08 + i * 0.04, audioCtx.currentTime);
-    lfoGain.gain.setValueAtTime(3, audioCtx.currentTime);
-    lfo.connect(lfoGain);
-    lfoGain.connect(osc.frequency);
-
-    filter.type = "lowpass";
-    filter.frequency.setValueAtTime(600 + i * 150, audioCtx.currentTime);
-    filter.Q.setValueAtTime(0.8, audioCtx.currentTime);
-
-    gain.gain.setValueAtTime(0.035, audioCtx.currentTime);
-
-    osc.connect(filter);
-    filter.connect(gain);
-    gain.connect(masterGain);
-
-    osc.start();
-    lfo.start();
-    allNodes.push(osc, lfo);
-  });
-
-  // Subtle noise texture
-  const bufferSize = audioCtx.sampleRate * 2;
-  const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-  const output = noiseBuffer.getChannelData(0);
-  for (let i = 0; i < bufferSize; i++) {
-    output[i] = Math.random() * 2 - 1;
-  }
-  const noise = audioCtx.createBufferSource();
-  noise.buffer = noiseBuffer;
-  noise.loop = true;
-  const noiseFilter = audioCtx.createBiquadFilter();
-  noiseFilter.type = "lowpass";
-  noiseFilter.frequency.setValueAtTime(350, audioCtx.currentTime);
-  const noiseGain = audioCtx.createGain();
-  noiseGain.gain.setValueAtTime(0.006, audioCtx.currentTime);
-  noise.connect(noiseFilter);
-  noiseFilter.connect(noiseGain);
-  noiseGain.connect(masterGain);
-  noise.start();
-  allNodes.push(noise);
-
-  return {
-    fadeIn: () => {
-      masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
-      masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-      masterGain.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 2);
-    },
-    fadeOut: () => {
-      masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
-      masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-      masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1.5);
-    },
-    destroy: () => {
-      allNodes.forEach((n) => {
-        try { n.stop(); } catch {}
-      });
-      masterGain.disconnect();
-    },
-  };
-}
+import backgroundMusic from "@/assets/background-music.mpeg";
 
 export default function MusicToggle() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const musicRef = useRef<ReturnType<typeof createAmbientMusic> | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const toggle = useCallback(() => {
-    // Initialize once
-    if (!audioCtxRef.current) {
-      audioCtxRef.current = new AudioContext();
-    }
-    if (audioCtxRef.current.state === "suspended") {
-      audioCtxRef.current.resume();
-    }
-
-    if (isPlaying) {
-      // Turn OFF — fade out
-      musicRef.current?.fadeOut();
-      setIsPlaying(false);
-    } else {
-      // Turn ON — create fresh nodes if needed, then fade in
-      if (!musicRef.current) {
-        musicRef.current = createAmbientMusic(audioCtxRef.current);
-      }
-      musicRef.current.fadeIn();
-      setIsPlaying(true);
-    }
-  }, [isPlaying]);
-
-  // Cleanup on unmount
   useEffect(() => {
+    const audio = new Audio(backgroundMusic);
+    audio.loop = true;
+    audio.volume = 0;
+    audioRef.current = audio;
+
     return () => {
-      musicRef.current?.destroy();
-      audioCtxRef.current?.close();
+      audio.pause();
+      audio.src = "";
     };
   }, []);
+
+  const fadeAudio = useCallback((audio: HTMLAudioElement, targetVolume: number, duration: number) => {
+    const steps = 30;
+    const stepTime = duration / steps;
+    const volumeStep = (targetVolume - audio.volume) / steps;
+    let currentStep = 0;
+
+    const interval = setInterval(() => {
+      currentStep++;
+      audio.volume = Math.min(1, Math.max(0, audio.volume + volumeStep));
+      if (currentStep >= steps) {
+        clearInterval(interval);
+        audio.volume = targetVolume;
+      }
+    }, stepTime);
+  }, []);
+
+  const toggle = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      fadeAudio(audio, 0, 1000);
+      setTimeout(() => audio.pause(), 1000);
+      setIsPlaying(false);
+    } else {
+      audio.play();
+      fadeAudio(audio, 0.7, 1500);
+      setIsPlaying(true);
+    }
+  }, [isPlaying, fadeAudio]);
 
   return (
     <motion.button
