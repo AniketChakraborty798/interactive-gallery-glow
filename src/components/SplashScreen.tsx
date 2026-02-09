@@ -1,8 +1,71 @@
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface SplashScreenProps {
   onStart: () => void;
   visible: boolean;
+}
+
+function useTypewriter(text: string, speed = 100, delay = 300) {
+  const [displayed, setDisplayed] = useState("");
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    let i = 0;
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        i++;
+        setDisplayed(text.slice(0, i));
+        if (i >= text.length) {
+          clearInterval(interval);
+          setDone(true);
+        }
+      }, speed);
+      return () => clearInterval(interval);
+    }, delay);
+    return () => clearTimeout(timeout);
+  }, [text, speed, delay]);
+
+  return { displayed, done };
+}
+
+function TypewriterText() {
+  const { displayed: welcomeText, done: welcomeDone } = useTypewriter("Welcome", 120, 300);
+  const { displayed: subtitleText } = useTypewriter("Portfolio Experience", 60, 1200);
+
+  return (
+    <>
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="font-display text-3xl md:text-5xl font-bold gradient-text mb-3"
+      >
+        {welcomeText}
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+          className="inline-block w-[3px] h-[0.8em] bg-primary ml-1 align-middle"
+          style={{ display: welcomeDone ? "none" : "inline-block" }}
+        />
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+        className="text-muted-foreground text-sm md:text-base mb-10 tracking-widest uppercase font-mono"
+      >
+        {subtitleText}
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+          className="inline-block w-[2px] h-[0.7em] bg-muted-foreground ml-1 align-middle"
+          style={{ display: subtitleText.length >= 20 ? "none" : "inline-block" }}
+        />
+      </motion.p>
+    </>
+  );
 }
 
 export default function SplashScreen({ onStart, visible }: SplashScreenProps) {
@@ -83,24 +146,8 @@ export default function SplashScreen({ onStart, visible }: SplashScreenProps) {
             </motion.div>
           </div>
 
-          {/* Text */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-display text-3xl md:text-5xl font-bold gradient-text mb-3"
-          >
-            Welcome
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-muted-foreground text-sm md:text-base mb-10 tracking-widest uppercase font-mono"
-          >
-            Portfolio Experience
-          </motion.p>
+          {/* Typewriter Text */}
+          <TypewriterText />
 
           {/* Start button */}
           <motion.button
