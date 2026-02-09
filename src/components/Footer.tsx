@@ -10,10 +10,16 @@ export default function Footer() {
         </p>
 
         <div className="flex items-center gap-4">
-          {[Github, Linkedin, Twitter].map((Icon, i) => (
+          {[
+            { Icon: Github, href: "#" },
+            { Icon: Linkedin, href: "https://www.linkedin.com/in/aniket-chakraborty-59505a298/" },
+            { Icon: Twitter, href: "#" },
+          ].map(({ Icon, href }, i) => (
             <motion.a
               key={i}
-              href="#"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ y: -3, scale: 1.1 }}
               className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
             >
