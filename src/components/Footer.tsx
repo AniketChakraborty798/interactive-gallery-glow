@@ -13,7 +13,7 @@ export default function Footer() {
           {[
             { Icon: Github, href: "https://github.com/AniketChakraborty798" },
             { Icon: Linkedin, href: "https://www.linkedin.com/in/aniket-chakraborty-59505a298/" },
-            { Icon: Twitter, href: "#" },
+            { Icon: Twitter, href: "https://x.com/AniketXi" },
           ].map(({ Icon, href }, i) => (
             <motion.a
               key={i}
