@@ -1,8 +1,18 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
+import cricscoreLogo from "@/assets/cricscore-logo.png";
 
 const projects = [
+  {
+    title: "CricScore Web App",
+    description: "Live cricket scores, match updates, and stats — all in one place.",
+    tags: ["TypeScript", "React", "HTML", "CSS"],
+    color: "from-primary/20 to-accent/20",
+    image: cricscoreLogo,
+    github: "https://github.com/AniketChakraborty798/chakraborty",
+    live: "https://elegant-sopapillas-eb5f33.netlify.app/",
+  },
   {
     title: "AI Dashboard",
     description: "Real-time analytics platform with AI-powered insights and beautiful data visualization.",
@@ -58,20 +68,32 @@ export default function ProjectsSection() {
             onMouseEnter={() => setHoveredIdx(i)}
             onMouseLeave={() => setHoveredIdx(null)}
           >
-            {/* Gradient placeholder for project image */}
+            {/* Project image or gradient */}
             <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"
-                animate={hoveredIdx === i ? { scale: 1.1 } : { scale: 1 }}
-                transition={{ duration: 0.5 }}
-              />
+              {project.image ? (
+                <img src={project.image} alt={project.title} className="w-full h-full object-contain p-4" />
+              ) : (
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"
+                  animate={hoveredIdx === i ? { scale: 1.1 } : { scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
+              )}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4">
-                <div className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center">
-                  <ExternalLink size={18} className="text-primary" />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center">
-                  <Github size={18} className="text-foreground" />
-                </div>
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors">
+                    <ExternalLink size={18} className="text-primary" />
+                  </a>
+                )}
+                {project.github ? (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors">
+                    <Github size={18} className="text-foreground" />
+                  </a>
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center">
+                    <Github size={18} className="text-foreground" />
+                  </div>
+                )}
               </div>
             </div>
 
