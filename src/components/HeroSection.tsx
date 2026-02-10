@@ -1,6 +1,53 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import HeroScene from "./HeroScene";
+
+const roles = [
+  "Python Full Stack Developer",
+  "Data Analyst",
+  "Electrical Engineer",
+];
+
+function TypingRoles() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = roles[roleIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!isDeleting && displayed.length < current.length) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80);
+    } else if (!isDeleting && displayed.length === current.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 1800);
+    } else if (isDeleting && displayed.length > 0) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 40);
+    } else if (isDeleting && displayed.length === 0) {
+      setIsDeleting(false);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayed, isDeleting, roleIndex]);
+
+  return (
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.7, duration: 0.6 }}
+      className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 font-mono"
+    >
+      {displayed}
+      <motion.span
+        animate={{ opacity: [1, 0] }}
+        transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+        className="inline-block w-[2px] h-[1em] bg-primary ml-1 align-middle"
+      />
+    </motion.p>
+  );
+}
 
 export default function HeroSection() {
   return (
@@ -19,14 +66,7 @@ export default function HeroSection() {
           Chakraborty
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.6 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10"
-        >
-          Python Full Stack Developer | Data Analyst | Electrical Engineer
-        </motion.p>
+        <TypingRoles />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
