@@ -25,7 +25,7 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.6 }}
           className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10"
         >
-          Full-stack developer crafting immersive web applications with cutting-edge technologies and stunning visuals.
+          Python Full Stack Developer | Data Analyst | Electrical Engineer
         </motion.p>
 
         <motion.div
