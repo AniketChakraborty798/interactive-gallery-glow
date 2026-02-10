@@ -8,25 +8,15 @@ export default function HeroSection() {
       <HeroScene />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-primary font-mono text-sm tracking-widest uppercase mb-4"
-        >
-          Creative Developer
-        </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
         >
-          I Build{" "}
-          <span className="gradient-text">Digital</span>
+          <span className="gradient-text">Aniket</span>
           <br />
-          Experiences
+          Chakraborty
         </motion.h1>
 
         <motion.p
