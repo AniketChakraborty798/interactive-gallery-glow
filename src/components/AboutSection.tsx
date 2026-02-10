@@ -26,9 +26,7 @@ export default function AboutSection() {
         </h2>
 
         <p className="text-muted-foreground text-lg max-w-3xl mb-16 leading-relaxed">
-          I'm a full-stack developer with 5+ years of experience building web applications. 
-          I specialize in React, Three.js, and modern web technologies, turning complex ideas 
-          into elegant, user-friendly digital products.
+          I'm a Python Full-Stack Developer and Data Analyst with a background in Electrical Engineering. I build scalable web applications, analyze data to extract meaningful insights, and enjoy solving real-world problems at the intersection of software, data, and engineering. With a strong foundation in logic, systems, and analytics, I focus on writing clean code and creating efficient, user-focused solutions.
         </p>
       </motion.div>
 
