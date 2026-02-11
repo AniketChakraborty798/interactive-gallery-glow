@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import FlyingBirds from "@/components/FlyingBirds";
 import MusicToggle from "@/components/MusicToggle";
 import SplashScreen from "@/components/SplashScreen";
+import ThemeMaskToggle from "@/components/ThemeMaskToggle";
 
 const Index = () => {
   const [started, setStarted] = useState(false);
@@ -27,6 +28,7 @@ const Index = () => {
           >
             <FlyingBirds />
             <MusicToggle />
+            <ThemeMaskToggle />
             <Navbar />
             <HeroSection />
             <AboutSection />
