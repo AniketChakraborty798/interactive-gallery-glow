@@ -11,6 +11,7 @@ import FlyingBirds from "@/components/FlyingBirds";
 import MusicToggle from "@/components/MusicToggle";
 import SplashScreen from "@/components/SplashScreen";
 import ThemeMaskToggle from "@/components/ThemeMaskToggle";
+import ScrollCompanionBird from "@/components/ScrollCompanionBird";
 
 const Index = () => {
   const [started, setStarted] = useState(false);
@@ -27,6 +28,7 @@ const Index = () => {
             className="min-h-screen bg-background overflow-x-hidden"
           >
             <FlyingBirds />
+            <ScrollCompanionBird />
             <MusicToggle />
             <ThemeMaskToggle />
             <Navbar />
