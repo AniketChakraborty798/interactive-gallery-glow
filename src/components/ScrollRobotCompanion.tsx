@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from
 
 function RobotSVG() {
   return (
-    <svg width="48" height="56" viewBox="0 0 48 56" fill="none">
+    <svg width="72" height="84" viewBox="0 0 48 56" fill="none">
       {/* Antenna */}
       <motion.line
         x1="24" y1="8" x2="24" y2="0"
