@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import cricscoreLogo from "@/assets/cricscore-logo.png";
+import miniHmsLogo from "@/assets/mini-hms-logo.png";
 
 const projects = [
   {
@@ -12,6 +13,14 @@ const projects = [
     image: cricscoreLogo,
     github: "https://github.com/AniketChakraborty798/chakraborty",
     live: "https://elegant-sopapillas-eb5f33.netlify.app/",
+  },
+  {
+    title: "Mini Hospital Management System",
+    description: "A full-stack web application built using Django that allows patients to book appointments with doctors in real-time. The system includes role-based authentication (Doctor/Patient), appointment slot management, Google Calendar integration, and automated email notifications.",
+    tags: ["Python", "Django", "HTML"],
+    color: "from-accent/20 to-primary/20",
+    image: miniHmsLogo,
+    github: "https://github.com/AniketChakraborty798/mini-hms-django",
   },
   {
     title: "AI Dashboard",
