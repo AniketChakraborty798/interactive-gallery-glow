@@ -72,13 +72,20 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          className="flex gap-4 justify-center"
+          className="flex gap-4 justify-center flex-wrap"
         >
           <a
             href="#projects"
             className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
           >
             View Work
+          </a>
+          <a
+            href="/Aniket_Final_Resume.pdf"
+            download="Aniket_Chakraborty_Resume.pdf"
+            className="px-8 py-3 rounded-lg bg-accent text-accent-foreground font-medium hover:opacity-90 transition-opacity"
+          >
+            View Resume
           </a>
           <a
             href="#contact"
