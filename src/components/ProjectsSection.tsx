@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import cricscoreLogo from "@/assets/cricscore-logo.png";
 import miniHmsLogo from "@/assets/mini-hms-logo.png";
+import netflixBanner from "@/assets/netflix-banner.png";
 
 const projects = [
   {
@@ -23,28 +24,12 @@ const projects = [
     github: "https://github.com/AniketChakraborty798/mini-hms-django",
   },
   {
-    title: "AI Dashboard",
-    description: "Real-time analytics platform with AI-powered insights and beautiful data visualization.",
-    tags: ["React", "Three.js", "Python", "AI/ML"],
-    color: "from-primary/20 to-accent/20",
-  },
-  {
-    title: "E-Commerce Platform",
-    description: "Full-stack marketplace with seamless payments, inventory management, and smooth UX.",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    color: "from-accent/20 to-primary/20",
-  },
-  {
-    title: "Social Media App",
-    description: "Mobile-first social platform with real-time messaging and content sharing capabilities.",
-    tags: ["React Native", "Firebase", "WebSocket", "TypeScript"],
-    color: "from-primary/20 to-accent/10",
-  },
-  {
-    title: "3D Product Configurator",
-    description: "Interactive 3D viewer for customizing products with real-time material and color changes.",
-    tags: ["Three.js", "WebGL", "React", "GLSL"],
-    color: "from-accent/10 to-primary/20",
+    title: "Netflix Data Analytics Project",
+    description: "Analyzed Netflix's content dataset to uncover insights into viewing trends, genre distribution, content growth, and regional availability. Performed data cleaning, exploratory data analysis (EDA), and created interactive visualizations to identify patterns in content type, release years, ratings, and country-wise production. The project demonstrates my ability to transform raw data into meaningful insights using data analytics tools and storytelling techniques.",
+    tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "Data Analytics"],
+    color: "from-[hsl(0,70%,30%)]/20 to-[hsl(0,0%,10%)]/20",
+    image: netflixBanner,
+    github: "https://github.com/AniketChakraborty798/Data-Analyst-Netflix-Project",
   },
 ];
 
