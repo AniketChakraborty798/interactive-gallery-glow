@@ -80,13 +80,19 @@ export default function HeroSection() {
           >
             View Work
           </a>
-          <a
-            href="/Aniket_Final_Resume.pdf"
-            download="Aniket_Chakraborty_Resume.pdf"
-            className="px-8 py-3 rounded-lg bg-accent text-accent-foreground font-medium hover:opacity-90 transition-opacity"
+          <button
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/Aniket_Final_Resume.pdf';
+              link.download = 'Aniket_Chakraborty_Resume.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+            className="px-8 py-3 rounded-lg bg-accent text-accent-foreground font-medium hover:opacity-90 transition-opacity cursor-pointer"
           >
             View Resume
-          </a>
+          </button>
           <a
             href="#contact"
             className="px-8 py-3 rounded-lg border border-border text-foreground hover:bg-secondary transition-colors"
