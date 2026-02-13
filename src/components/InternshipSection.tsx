@@ -1,6 +1,8 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Briefcase, ExternalLink } from "lucide-react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
+import { Briefcase, ExternalLink, ImageIcon, X } from "lucide-react";
+import ecwocBanner from "@/assets/ecwoc-banner.png";
+import ecwocIdCard from "@/assets/ecwoc-id-card.png";
 
 const internships = [
   {
@@ -11,12 +13,17 @@ const internships = [
     description:
       "Actively contributing to real-world open-source projects by collaborating with mentors and developers. Following industry-standard coding practices, Git workflows, and contribution guidelines while improving problem-solving and teamwork skills.",
     technologies: ["HTML5", "CSS", "Git", "GitHub", "JavaScript"],
+    proofImages: [
+      { src: ecwocBanner, alt: "ECWoC Participant Banner" },
+      { src: ecwocIdCard, alt: "Verified ECWoC Participant ID Card" },
+    ],
   },
 ];
 
 export default function InternshipSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
     <section id="internship" className="section-padding max-w-7xl mx-auto" ref={ref}>
@@ -63,10 +70,60 @@ export default function InternshipSection() {
                   </span>
                 ))}
               </div>
+
+              {/* Proof images */}
+              {item.proofImages && item.proofImages.length > 0 && (
+                <div className="mt-5">
+                  <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                    <ImageIcon size={12} /> Proof & Certificates
+                  </p>
+                  <div className="flex gap-3 flex-wrap">
+                    {item.proofImages.map((img) => (
+                      <motion.button
+                        key={img.alt}
+                        whileHover={{ scale: 1.03 }}
+                        onClick={() => setLightbox(img.src)}
+                        className="rounded-lg overflow-hidden border border-border/50 hover:border-primary/50 transition-colors cursor-pointer"
+                      >
+                        <img src={img.src} alt={img.alt} className="h-20 md:h-24 w-auto object-cover" />
+                      </motion.button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative max-w-4xl max-h-[85vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-background flex items-center justify-center hover:bg-secondary transition-colors z-10"
+              >
+                <X size={16} />
+              </button>
+              <img src={lightbox} alt="Proof" className="rounded-lg max-h-[85vh] w-auto object-contain" />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
