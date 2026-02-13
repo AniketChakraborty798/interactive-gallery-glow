@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Briefcase, ExternalLink, ImageIcon, X } from "lucide-react";
 import ecwocBanner from "@/assets/ecwoc-banner.png";
 import ecwocIdCard from "@/assets/ecwoc-id-card.png";
+import ecwocContributor from "@/assets/ecwoc-contributor-card.jpeg";
 
 const internships = [
   {
@@ -16,6 +17,7 @@ const internships = [
     proofImages: [
       { src: ecwocBanner, alt: "ECWoC Participant Banner" },
       { src: ecwocIdCard, alt: "Verified ECWoC Participant ID Card" },
+      { src: ecwocContributor, alt: "ECWoC 2026 Contributor ID Card" },
     ],
   },
 ];
