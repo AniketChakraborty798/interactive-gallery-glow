@@ -1,11 +1,26 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-import { Briefcase, ExternalLink, ImageIcon, X } from "lucide-react";
+import { Briefcase, ExternalLink, ImageIcon, FileText, X } from "lucide-react";
 import ecwocBanner from "@/assets/ecwoc-banner.png";
 import ecwocIdCard from "@/assets/ecwoc-id-card.png";
 import ecwocContributor from "@/assets/ecwoc-contributor-card.jpeg";
 
 const internships = [
+  {
+    company: "InterviewGod",
+    role: "Personal Assistant to the CEO",
+    type: "Full-Time, On-site",
+    duration: "Jul 2024 – Present (1 Year 8 Months)",
+    location: "Bengaluru, Karnataka, India",
+    description:
+      "Worked closely with the CEO in managing operations, communication, technical coordination, and support activities. Contributed to strategic planning, handled internal documentation, and supported business development initiatives in an AI-driven hiring platform.",
+    technologies: ["Communication", "Technical Support", "Operations Management", "Coordination"],
+    proofImages: [],
+    proofPdfs: [
+      { href: "/proofs/Aniket_BD.pdf", label: "Business Development Certificate" },
+      { href: "/proofs/internship_offer_letter.pdf", label: "Internship Offer Letter" },
+    ],
+  },
   {
     company: "Elite Coders",
     role: "Open Source Contributor",
@@ -19,6 +34,7 @@ const internships = [
       { src: ecwocIdCard, alt: "Verified ECWoC Participant ID Card" },
       { src: ecwocContributor, alt: "ECWoC 2026 Contributor ID Card" },
     ],
+    proofPdfs: [],
   },
 ];
 
@@ -61,6 +77,9 @@ export default function InternshipSection() {
               <p className="text-primary/80 text-sm font-medium mb-1">
                 {item.role} · {item.type}
               </p>
+              {item.location && (
+                <p className="text-muted-foreground text-xs mb-1">{item.location}</p>
+              )}
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">{item.description}</p>
               <div className="flex flex-wrap gap-2">
                 {item.technologies.map((tech) => (
@@ -89,6 +108,30 @@ export default function InternshipSection() {
                       >
                         <img src={img.src} alt={img.alt} className="h-20 md:h-24 w-auto object-cover" />
                       </motion.button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Proof PDFs */}
+              {item.proofPdfs && item.proofPdfs.length > 0 && (
+                <div className="mt-4">
+                  <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                    <FileText size={12} /> Documents
+                  </p>
+                  <div className="flex gap-3 flex-wrap">
+                    {item.proofPdfs.map((pdf) => (
+                      <a
+                        key={pdf.label}
+                        href={pdf.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-xs font-mono px-3 py-2 rounded-lg border border-border/50 hover:border-primary/50 hover:text-primary transition-colors"
+                      >
+                        <FileText size={14} />
+                        {pdf.label}
+                        <ExternalLink size={12} />
+                      </a>
                     ))}
                   </div>
                 </div>

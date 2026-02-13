@@ -4,6 +4,16 @@ import { Award, CheckCircle } from "lucide-react";
 
 const achievements = [
   {
+    title: "Core Operations Team Member",
+    description: "Served as a key member of the operations team at InterviewGod, supporting the CEO in daily business activities.",
+    icon: Award,
+  },
+  {
+    title: "CEO Office – Strategic Support Role",
+    description: "Provided strategic support in an AI-driven hiring platform, contributing to planning and business development.",
+    icon: CheckCircle,
+  },
+  {
     title: "Verified ECWoC Participant",
     description: "Recognized as a verified participant in the Elite Coders Winter of Code program.",
     icon: Award,
