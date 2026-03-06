@@ -17,7 +17,7 @@ const internships = [
     technologies: ["Communication", "Technical Support", "Operations Management", "Coordination"],
     proofImages: [],
     proofPdfs: [
-      { href: "/proofs/Aniket_BD.pdf", label: "Business Development Certificate" },
+      { href: "/proofs/Aniket_BD.pdf", label: "Certificate" },
       { href: "/proofs/internship_offer_letter.pdf", label: "Internship Offer Letter" },
     ],
   },
