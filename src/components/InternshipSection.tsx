@@ -23,6 +23,20 @@ const internships = [
     ],
   },
   {
+    company: "Labmentix Private Limited",
+    role: "Data Analyst Intern",
+    type: "Internship",
+    duration: "Sep 2025 – Oct 2025 (2 Months)",
+    description:
+      "Completed a data analyst internship, working on data analysis, reporting, and deriving actionable insights from datasets to support business decisions.",
+    technologies: ["Data Analysis", "Reporting", "Excel", "Data Visualization"],
+    proofImages: [],
+    proofPdfs: [
+      { href: "/proofs/labmentix_certificate.pdf", label: "Certificate" },
+      { href: "/proofs/labmentix_offer.pdf", label: "Offer Letter" },
+    ],
+  },
+  {
     company: "B2B Drive",
     role: "Data Entry Specialist",
     type: "Internship, Remote",
