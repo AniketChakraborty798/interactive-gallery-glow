@@ -42,7 +42,7 @@ export default function ContactSection() {
 
           <div className="space-y-4">
             {[
-              { icon: Mail, text: "hello@portfolio.dev" },
+              { icon: Mail, text: "aniketchakraborty808@gmail.com" },
               { icon: MapPin, text: "San Francisco, CA" },
               { icon: Phone, text: "+1 (555) 123-4567" },
             ].map(({ icon: Icon, text }) => (
