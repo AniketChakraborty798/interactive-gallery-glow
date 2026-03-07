@@ -42,15 +42,19 @@ export default function ContactSection() {
 
           <div className="space-y-4">
             {[
-              { icon: Mail, text: "aniketchakraborty808@gmail.com" },
-              { icon: MapPin, text: "San Francisco, CA" },
-              { icon: Phone, text: "+1 (555) 123-4567" },
-            ].map(({ icon: Icon, text }) => (
+              { icon: Mail, text: "aniketchakraborty808@gmail.com", href: "mailto:aniketchakraborty808@gmail.com" },
+              { icon: MapPin, text: "San Francisco, CA", href: undefined },
+              { icon: Phone, text: "+1 (555) 123-4567", href: undefined },
+            ].map(({ icon: Icon, text, href }) => (
               <div key={text} className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Icon size={18} className="text-primary" />
                 </div>
-                <span className="text-muted-foreground">{text}</span>
+                {href ? (
+                  <a href={href} className="text-muted-foreground hover:text-primary transition-colors">{text}</a>
+                ) : (
+                  <span className="text-muted-foreground">{text}</span>
+                )}
               </div>
             ))}
           </div>
