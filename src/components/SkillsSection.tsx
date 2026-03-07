@@ -7,14 +7,14 @@ const skills = [
   { name: "Three.js / WebGL", level: 85 },
   { name: "Node.js", level: 88 },
   { name: "Python", level: 80 },
-  { name: "UI/UX Design", level: 85 },
+  
   { name: "PostgreSQL", level: 82 },
   { name: "DevOps / CI/CD", level: 75 },
 ];
 
 const techStack = [
   "React", "TypeScript", "Three.js", "Tailwind CSS", "Node.js", "PostgreSQL",
-  "Docker", "AWS", "Figma", "Git", "GraphQL", "Redis",
+  "Docker", "AWS", "HTML", "CSS", "JavaScript", "Git", "GraphQL",
 ];
 
 export default function SkillsSection() {
