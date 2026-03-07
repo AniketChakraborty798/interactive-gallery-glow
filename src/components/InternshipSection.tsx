@@ -4,6 +4,7 @@ import { Briefcase, ExternalLink, ImageIcon, FileText, X } from "lucide-react";
 import ecwocBanner from "@/assets/ecwoc-banner.png";
 import ecwocIdCard from "@/assets/ecwoc-id-card.png";
 import ecwocContributor from "@/assets/ecwoc-contributor-card.jpeg";
+import b2bCertificate from "@/assets/b2b-drive-certificate.png";
 
 const internships = [
   {
@@ -20,6 +21,20 @@ const internships = [
       { href: "/proofs/Aniket_BD.pdf", label: "Certificate" },
       { href: "/proofs/internship_offer_letter.pdf", label: "Internship Offer Letter" },
     ],
+  },
+  {
+    company: "B2B Drive",
+    role: "Data Entry Specialist",
+    type: "Internship, Remote",
+    duration: "Nov 2024 – May 2025 (7 Months)",
+    location: "Chennai, India",
+    description:
+      "Completed a 2-month internship at B2B Drive, handling data entry tasks with great competence and rigour. Worked on SEO optimization, internal audits, and utilized MS Office tools for data management and reporting.",
+    technologies: ["SEO", "Internal Audits", "MS Office", "MS Excel", "Spreadsheets"],
+    proofImages: [
+      { src: b2bCertificate, alt: "B2B Drive Certificate of Completion" },
+    ],
+    proofPdfs: [],
   },
   {
     company: "Elite Coders",
