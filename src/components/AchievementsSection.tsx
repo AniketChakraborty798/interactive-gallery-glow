@@ -24,6 +24,11 @@ const achievements = [
     icon: CheckCircle,
   },
   {
+    title: "B2B Drive – Data Entry Specialist",
+    description: "Completed internship at B2B Drive with excellence in data entry, SEO, and internal audits.",
+    icon: Award,
+  },
+  {
     title: "Community Contribution Certificate Holder",
     description: "Awarded a certificate for meaningful contributions to community-driven open-source projects.",
     icon: Award,
