@@ -43,7 +43,7 @@ export default function ContactSection() {
           <div className="space-y-4">
             {[
               { icon: Mail, text: "aniketchakraborty808@gmail.com", href: "mailto:aniketchakraborty808@gmail.com" },
-              { icon: MapPin, text: "San Francisco, CA", href: undefined },
+              { icon: MapPin, text: "New Barrackpur, Kolkata", href: undefined },
               { icon: Phone, text: "+1 (555) 123-4567", href: undefined },
             ].map(({ icon: Icon, text, href }) => (
               <div key={text} className="flex items-center gap-4">
