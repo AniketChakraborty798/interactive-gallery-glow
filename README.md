@@ -122,7 +122,17 @@ The purpose of this portfolio website is to:
 - **LinkedIn:** [https://linkedin.com/in/your-linkedin ](https://www.linkedin.com/in/aniket-chakraborty-59505a298/) 
 - **Email:** aniketchakraborty808@gmail.com
 - ## 📂 Screenshots
-- <img width="1902" height="905" alt="Screenshot 2026-03-08 123101" src="https://github.com/user-attachments/assets/270a5897-0383-400e-88ad-ef8679856771" />
+- <img width="1919" height="904" alt="Screenshot 2026-03-08 123005" src="https://github.com/user-attachments/assets/9279bb74-674c-47c2-abf1-defdf6cd4ba2" />
+<img width="1902" height="907" alt="Screenshot 2026-03-08 123020" src="https://github.com/user-attachments/assets/1e028d03-61af-43b4-af9f-706a755e9d90" />
+<img width="1889" height="903" alt="Screenshot 2026-03-08 123034" src="https://github.com/user-attachments/assets/b29da4e1-9faa-4619-b89c-8947965fde99" />
+<img width="1895" height="908" alt="Screenshot 2026-03-08 123049" src="https://github.com/user-attachments/assets/fef9fdee-251c-4dad-84a6-bb51e789f51b" />
+<img width="1902" height="905" alt="Screenshot 2026-03-08 123101" src="https://github.com/user-attachments/assets/b846ec5d-0b94-43de-9cab-5e67fb93dbd4" />
+
+
+
+
+
+
 
 
 ---
