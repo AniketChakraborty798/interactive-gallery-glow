@@ -118,9 +118,9 @@ The purpose of this portfolio website is to:
 
 ## 🔗 Connect With Me
 
-- **GitHub:** https://github.com/your-username  
-- **LinkedIn:** https://linkedin.com/in/your-linkedin  
-- **Email:** your-email@example.com  
+- **GitHub:** https://github.com/AniketChakraborty798  
+- **LinkedIn:** [https://linkedin.com/in/your-linkedin ](https://www.linkedin.com/in/aniket-chakraborty-59505a298/) 
+- **Email:** aniketchakraborty808@gmail.com  
 
 ---
 
