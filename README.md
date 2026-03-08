@@ -120,7 +120,10 @@ The purpose of this portfolio website is to:
 
 - **GitHub:** https://github.com/AniketChakraborty798  
 - **LinkedIn:** [https://linkedin.com/in/your-linkedin ](https://www.linkedin.com/in/aniket-chakraborty-59505a298/) 
-- **Email:** aniketchakraborty808@gmail.com  
+- **Email:** aniketchakraborty808@gmail.com
+- ## 📂 Screenshots
+- <img width="1902" height="905" alt="Screenshot 2026-03-08 123101" src="https://github.com/user-attachments/assets/270a5897-0383-400e-88ad-ef8679856771" />
+
 
 ---
 
