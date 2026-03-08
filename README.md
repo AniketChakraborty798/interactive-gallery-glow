@@ -1,73 +1,129 @@
-# Welcome to your Lovable project
+# 🌐 Personal Portfolio Website
 
-## Project info
+This is my **personal portfolio website** built to showcase my projects, technical skills, and experience.  
+The goal of this website is to create a professional online presence where recruiters, collaborators, and developers can explore my work.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 👨‍💻 About Me
 
-There are several ways of editing your application.
+My name is **Aniket Chakraborty**, and I am currently pursuing a **Bachelor’s degree in Electrical Engineering**. Alongside my academic journey, I have developed a strong interest in **software development, data analysis, and backend systems**.
 
-**Use Lovable**
+I enjoy building projects that combine **engineering thinking with modern software technologies**. This portfolio highlights my projects and the technologies I have been working with.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Features
 
-**Use your preferred IDE**
+- Modern and responsive portfolio design  
+- Clean and minimal user interface  
+- Project showcase section  
+- Skills and technologies section  
+- Contact information for collaboration  
+- Fast performance using modern frontend tools  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Tech Stack
 
-Follow these steps:
+This portfolio website was developed using modern web technologies:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **React**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **shadcn/ui**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+These technologies allow the site to remain **fast, scalable, and visually clean**.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 📂 Project Structure
+
+```
+portfolio-website/
+│
+├── public/              # Static assets
+├── src/                 # Main source code
+│   ├── components/      # Reusable UI components
+│   ├── pages/           # Website pages
+│   ├── assets/          # Images and resources
+│   └── App.tsx          # Main application file
+│
+├── index.html           # Entry HTML file
+├── package.json         # Project dependencies
+├── tailwind.config.ts   # Tailwind configuration
+├── vite.config.ts       # Vite configuration
+└── README.md            # Project documentation
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+To run this project locally on your computer:
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-portfolio.git
+```
+
+### 2️⃣ Go to the project directory
+
+```bash
+cd your-portfolio
+```
+
+### 3️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 4️⃣ Start the development server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The website will run locally on:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+http://localhost:5173
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📦 Build for Production
 
-## What technologies are used for this project?
+To create an optimized production build:
 
-This project is built with:
+```bash
+npm run build
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🎯 Purpose of This Project
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+The purpose of this portfolio website is to:
 
-## Can I connect a custom domain to my Lovable project?
+- Showcase my technical projects
+- Demonstrate my development skills
+- Provide an easy way for recruiters to view my work
+- Build a professional online presence
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🔗 Connect With Me
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **GitHub:** https://github.com/your-username  
+- **LinkedIn:** https://linkedin.com/in/your-linkedin  
+- **Email:** your-email@example.com  
+
+---
+
+## 📜 License
+
+This project is open-source and available for learning and inspiration.
