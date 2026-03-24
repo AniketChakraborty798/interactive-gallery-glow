@@ -5,7 +5,7 @@ The goal of this website is to create a professional online presence where recru
 
 ---
 
-## 👨‍💻 About Me
+## 👨‍💻 About M
 
 My name is **Aniket Chakraborty**, and I am currently pursuing a **Bachelor’s degree in Electrical Engineering**. Alongside my academic journey, I have developed a strong interest in **software development, data analysis, and backend systems**.
 
