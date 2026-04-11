@@ -1,4 +1,4 @@
-# 🌐 Personal Portfolio Website
+# 🌐 Personal Portfolio 
 
 This is my **personal portfolio website** built to showcase my projects, technical skills, and experience.  
 The goal of this website is to create a professional online presence where recruiters, collaborators, and developers can explore my work.
