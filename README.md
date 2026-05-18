@@ -28,7 +28,7 @@ I enjoy building projects that combine **engineering thinking with modern softwa
 
 This portfolio website was developed using modern web technologies:
 
-- ****
+- **React**
 - **TypeScript**
 - **Vite**
 - **Tailwind CSS**
