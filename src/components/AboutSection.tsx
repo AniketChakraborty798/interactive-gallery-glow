@@ -13,7 +13,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={ref}
-      className="py-24 px-6 md:px-12 lg:px-20"
+      className="py-24 px-6 md:px-12 lg:px-24"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
