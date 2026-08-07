@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import myPic from "@/assets/photo_1.jpeg.asset.json";
+import myPic from "@/assets/my_pic.png";
 
 export default function AboutSection() {
   const ref = useRef(null);
@@ -25,7 +25,7 @@ export default function AboutSection() {
           <div className="relative group">
             <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary to-accent opacity-60 blur-md group-hover:opacity-80 transition-opacity" />
             <img
-              src={myPic.url}
+              src={myPic}
               alt="Aniket Chakraborty"
               className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-background shadow-xl"
             />
