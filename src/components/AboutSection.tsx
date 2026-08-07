@@ -4,6 +4,7 @@ import myPic from "@/assets/my_pic.png";
 
 export default function AboutSection() {
   const ref = useRef(null);
+
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px",
@@ -13,7 +14,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={ref}
-      className="py-24 px-6 md:px-12 lg:px-24"
+      className="section-padding max-w-7xl mx-auto"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -28,11 +29,13 @@ export default function AboutSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex-shrink-0"
         >
-          <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-black shadow-[0_0_40px_rgba(255,120,0,0.6)]">
+          <div className="relative">
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 blur-lg opacity-70"></div>
+
             <img
               src={myPic}
               alt="Aniket Chakraborty"
-              className="w-full h-full object-cover"
+              className="relative w-64 h-64 rounded-full object-cover border-4 border-background shadow-2xl"
             />
           </div>
         </motion.div>
