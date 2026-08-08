@@ -82,21 +82,9 @@ export default function HeroSection() {
             View Work
           </a>
           <button
-            onClick={async () => {
-              try {
-                const response = await fetch(resumeAsset.url);
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'Aniket_Chakraborty_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                window.URL.revokeObjectURL(url);
-              } catch {
-                window.open(resumeAsset.url, '_blank');
-              }
+            onClick={() => {
+               window.open("/proofs/Aniket_Final_Resume.pdf", "_blank");
+             
             }}
             className="px-8 py-3 rounded-lg bg-accent text-accent-foreground font-medium hover:opacity-90 transition-opacity cursor-pointer"
           >
