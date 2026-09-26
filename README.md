@@ -1,4 +1,4 @@
-# ✨ Interactive Gallery Glow — Personal Portfolio
+# ✨ Interactive Gallery Glow — Personal Portfoli
 
 A modern, responsive, and interactive **personal portfolio website** built to showcase my projects, technical skills, experience, and developer journey.
 
